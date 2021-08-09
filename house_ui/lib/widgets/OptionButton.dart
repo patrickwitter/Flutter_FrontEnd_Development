@@ -15,6 +15,7 @@ class OptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
+      // ignore: deprecated_member_use
       child: FlatButton(
           color: COLOR_DARK_BLUE,
           splashColor: Colors.white.withAlpha(55),
@@ -29,7 +30,6 @@ class OptionButton extends StatelessWidget {
                 icon,
                 color: COLOR_WHITE,
               ),
-              //addHorizontalSpace(1),
               Text(
                 text,
                 style: TextStyle(color: COLOR_WHITE),

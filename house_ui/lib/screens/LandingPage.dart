@@ -90,10 +90,10 @@ class LandingPage extends StatelessWidget {
                     padding: sidePadding,
                     child: ListView.builder(
                         physics: BouncingScrollPhysics(),
-                        itemCount: RE_DATA.length,
+                        itemCount: HOUSE_DATA.length,
                         itemBuilder: (context, index) {
                           return RealEstateItem(
-                            itemData: RE_DATA[index],
+                            itemData: HOUSE_DATA[index],
                           );
                         }),
                   ),
