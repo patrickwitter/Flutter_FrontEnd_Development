@@ -139,6 +139,7 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      key: Key("NavBar"),
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
