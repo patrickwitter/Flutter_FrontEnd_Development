@@ -154,8 +154,12 @@ class PicGrid extends StatelessWidget {
   final int additional;
   @override
   Widget build(BuildContext context) {
+    final maxWidgetHeight = MediaQuery.of(context).size.height * 1 / 2;
     return LimitedBox(
-      maxHeight: MediaQuery.of(context).size.height * 1 / 2,
+      // The incomming height is uncontrained as we are in a list view. Hence we use limited box,
+      // This is beacuse we want to tell the row to take up the remaining width and height.
+      // If this was ommited the flexible-row would get infinite vertical space and throw an error
+      maxHeight: maxWidgetHeight,
       child: LayoutBuilder(builder: (context, constraints) {
         print("${constraints.maxHeight}");
         print("${constraints.minHeight}");
@@ -168,10 +172,15 @@ class PicGrid extends StatelessWidget {
               height: 10,
             ),
             Flexible(
+              // We use this as we want to tell the next column to take up the rest of the vertical space.
+              // If we did not do this the row would have unbounded vertical space (as it is a non-flex child of the column parent).
+              // And then pass this height to its children
+              // Due to this the column in the "Expanded [denoted 'here']" widget would have infinite height if this was ommited.
+              // As the expanded says "Take up the remainig space" the column child would have infinite height
               child: Row(children: [
                 Container(
                   width: MediaQuery.of(context).size.width * 1 / 2.5,
-                  height: MediaQuery.of(context).size.height * 1 / 2,
+                  height: maxWidgetHeight,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.fill,
@@ -187,13 +196,13 @@ class PicGrid extends StatelessWidget {
                   width: 2,
                 ),
                 Expanded(
+                  // here - The expanded tells the column to take up remaining width and height within the row
                   child: LayoutBuilder(builder: (context, constraints) {
                     print("${constraints.maxHeight}");
                     print("${constraints.minHeight}");
                     print(" width - ${constraints.minWidth}");
                     print(" width - ${constraints.maxWidth}");
                     return Column(
-                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Expanded(
                           child: Container(
