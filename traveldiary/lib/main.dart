@@ -155,7 +155,7 @@ class PicGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LimitedBox(
-      maxHeight: MediaQuery.of(context).size.height * 1 / 4,
+      maxHeight: MediaQuery.of(context).size.height * 1 / 2,
       child: LayoutBuilder(builder: (context, constraints) {
         print("${constraints.maxHeight}");
         print("${constraints.minHeight}");
@@ -171,7 +171,7 @@ class PicGrid extends StatelessWidget {
               child: Row(children: [
                 Container(
                   width: MediaQuery.of(context).size.width * 1 / 2.5,
-                  height: MediaQuery.of(context).size.height * 1 / 4,
+                  height: MediaQuery.of(context).size.height * 1 / 2,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.fill,
@@ -184,7 +184,7 @@ class PicGrid extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  width: 5,
+                  width: 2,
                 ),
                 Expanded(
                   child: LayoutBuilder(builder: (context, constraints) {
@@ -209,7 +209,7 @@ class PicGrid extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                          height: 5,
+                          height: 2,
                         ),
                         Expanded(
                           child: GestureDetector(
@@ -222,15 +222,19 @@ class PicGrid extends StatelessWidget {
                                     image: AssetImage(image3),
                                   ),
                                   borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(10),
+                                    bottomRight: Radius.circular(10),
                                   ),
                                 ),
                               ),
                               Align(
                                 alignment: Alignment.bottomRight,
-                                child: Text(
-                                  '+' + additional.toString(),
-                                  style: Theme.of(context).textTheme.subtitle1,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '+' + additional.toString(),
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1,
+                                  ),
                                 ),
                               ),
                             ]),
