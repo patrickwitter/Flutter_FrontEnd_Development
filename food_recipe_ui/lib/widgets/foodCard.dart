@@ -22,8 +22,7 @@ class FoodCard extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              height: 100,
-              width: 100,
+              constraints: BoxConstraints(minHeight: 100, minWidth: 100),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
@@ -64,7 +63,10 @@ class FoodCardInfo extends StatelessWidget {
             height: 2,
             decoration: BoxDecoration(
               color: Colors.amber,
-              border: Border.all(color: Colors.amber, style: BorderStyle.solid),
+              border: Border.all(
+                color: Colors.amber,
+                style: BorderStyle.solid,
+              ),
             ),
           ),
         ),
