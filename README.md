@@ -1,5 +1,5 @@
 # Flutter_FrontEnd_Development
-This is a collection of UI designs that I have implement using Flutter
+This is a collection of UI designs that I have implemented using Flutter
   <ul> 
   <li> <b>FoodTruck UI</b> <br/>
   UI screen credit: https://dribbble.com/shots/5358373-Profile-Screen-of-Food-Truck-App<br/>
@@ -41,4 +41,12 @@ https://user-images.githubusercontent.com/53438425/127722978-5fda6be8-8815-4e70-
 https://user-images.githubusercontent.com/53438425/128571877-949a54c5-512c-49a4-a958-b10a2b36b648.mp4
 
   </li>
+  
+  <li> <b> Travel App UI</b> <br/>
+     UI screen credit:https://dribbble.com/shots/4991
+
+https://user-images.githubusercontent.com/53438425/148431174-b407dd85-76ac-4aaf-bc30-620bf1f13f01.mp4
+
+482/attachments/1115545?mode=media<br/>
+    
   </ul> 
