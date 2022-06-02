@@ -1,67 +1,57 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe_ui/widgets/foodcard.dart';
+import 'package:food_recipe_ui/widgets/foodCard/foodcard.dart';
 import 'package:food_recipe_ui/widgets/leadImage.dart';
+import 'package:sizer/sizer.dart';
 
 import '../widgets/searchbar.dart';
 import '../widgets/title.dart';
 
 class Body extends StatelessWidget {
   const Body({
-    Key key,
-    @required this.scrHeight,
-    @required this.scrWidth,
+    Key? key,
   }) : super(key: key);
-
-  final double scrHeight;
-  final double scrWidth;
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SearchBar(),
-        SizedBox(height: 20),
+        SizedBox(height: 2.h),
         BodyTitle(),
         SizedBox(
-          height: 15,
+          height: 2.h,
         ),
         Container(
-          height: scrHeight * .18,
+          constraints: BoxConstraints(maxHeight: 18.h),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              FoodCard(scrWidth: scrWidth),
-              FoodCard(scrWidth: scrWidth),
-              FoodCard(scrWidth: scrWidth),
-              FoodCard(scrWidth: scrWidth),
-              FoodCard(scrWidth: scrWidth),
+              FoodCard(),
+              FoodCard(),
+              FoodCard(),
+              FoodCard(),
+              FoodCard(),
             ],
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 2.h,
         ),
         Text(
           "September 7",
-          style: TextStyle(
-            color: Colors.grey,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
+          style: themeData.textTheme.headline3,
         ),
         SizedBox(
-          height: 10,
+          height: 1.h,
         ),
         Text(
           "today".toUpperCase(),
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 40,
-          ),
+          style: themeData.textTheme.headline2,
         ),
-        LeadImage(scrHeight: scrHeight)
+        LeadImage()
       ],
     );
   }

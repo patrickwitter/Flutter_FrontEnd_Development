@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class LeadImage extends StatelessWidget {
   const LeadImage({
-    Key key,
-    @required this.scrHeight,
+    Key? key,
   }) : super(key: key);
-
-  final double scrHeight;
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+
     return Padding(
       padding: EdgeInsets.all(3),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Stack(children: [
           Container(
-            height: scrHeight * .35,
+            constraints: BoxConstraints(minHeight: 35.h),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 image: DecorationImage(
@@ -28,26 +28,18 @@ class LeadImage extends StatelessWidget {
                 ]),
           ),
           Positioned(
-            top: (scrHeight / (2.3)) * .4,
-            left: 20,
+            top: 10.h,
+            left: 5.w,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   "best of".toUpperCase(),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: themeData.textTheme.headline1,
                 ),
                 Text(
                   "the day".toUpperCase(),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: themeData.textTheme.headline1,
                 ),
               ],
             ),

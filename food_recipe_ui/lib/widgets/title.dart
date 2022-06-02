@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class BodyTitle extends StatelessWidget {
   const BodyTitle({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -12,8 +13,8 @@ class BodyTitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          height: 40,
-          width: 5,
+          height: 7.h,
+          width: 1.5.w,
           decoration: BoxDecoration(
             color: Colors.amber.withOpacity(.5),
             borderRadius: BorderRadius.circular(30),

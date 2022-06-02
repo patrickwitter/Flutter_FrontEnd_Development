@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+
     return Container(
-      padding: EdgeInsets.all(5),
+      padding: EdgeInsets.all(.25.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: Colors.white,
@@ -20,10 +23,8 @@ class SearchBar extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: "Search for recipes and channels",
-          hintStyle: TextStyle(
-            color: Colors.grey,
-          ),
-          contentPadding: EdgeInsets.all(10),
+          hintStyle: themeData.textTheme.subtitle2,
+          contentPadding: EdgeInsets.all(3.w),
           prefixIcon: Icon(Icons.search),
         ),
       ),
