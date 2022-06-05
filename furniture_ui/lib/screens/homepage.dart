@@ -30,13 +30,14 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
     var tabHeight = 12.5.h;
     var listItemHeight = 20.h;
 
     return Scaffold(
-      backgroundColor: Color(0xffefefef),
+      backgroundColor: themeData.scaffoldBackgroundColor,
       bottomNavigationBar: Material(
-        color: Colors.white,
+        color: themeData.cardColor,
         child: BottomNavBar(controller: controller),
       ),
       body: ListView(

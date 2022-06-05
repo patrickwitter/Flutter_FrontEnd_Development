@@ -10,6 +10,8 @@ class ListItemText extends StatelessWidget {
   final bool isfav;
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.only(top: 1),
@@ -22,11 +24,7 @@ class ListItemText extends StatelessWidget {
                 children: [
                   Text(
                     "FinNavian",
-                    style: TextStyle(
-                      fontFamily: "Quicksand",
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+                    style: themeData.textTheme.headline4,
                   ),
                   (isfav
                       ? Icon(
@@ -41,33 +39,26 @@ class ListItemText extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 1.h,
             ),
             Text(
               "Scandinavian small sized double sofa imported" +
                   "full leather / Dale Italia oil wax leather black",
-              style: TextStyle(
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Quicksand",
-                fontSize: 12,
-              ),
+              style: themeData.textTheme.bodyText2,
             ),
             SizedBox(
-              height: 5,
+              height: .5.h,
             ),
             Row(
               children: [
                 Expanded(
                   child: Container(
                     alignment: Alignment.center,
-                    color: Color(0xfffac83e),
+                    color: themeData.canvasColor,
                     padding: EdgeInsets.all(5.w),
                     child: Text(
                       "\$248",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      style: themeData.textTheme.caption,
                     ),
                   ),
                   flex: 1,
@@ -75,13 +66,11 @@ class ListItemText extends StatelessWidget {
                 Expanded(
                   child: Container(
                     alignment: Alignment.center,
-                    color: Color(0xfffee16b),
+                    color: themeData.primaryColor,
                     padding: EdgeInsets.all(5.w),
                     child: Text(
                       "Add to cart",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      style: themeData.textTheme.caption,
                     ),
                   ),
                   flex: 2,

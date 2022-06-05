@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_ui/screens/homepage.dart';
+import 'package:furniture_ui/themes.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -13,9 +14,7 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) => MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: appTheme,
         home: HomePage(),
         debugShowCheckedModeBanner: false,
       ),

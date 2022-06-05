@@ -11,14 +11,15 @@ class TabRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
     return Container(
       width: 100.w,
       height: tabHeight,
-      color: Colors.white,
+      color: themeData.cardColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
+        padding: EdgeInsets.symmetric(
           vertical: 0,
-          horizontal: 5,
+          horizontal: 1.h,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

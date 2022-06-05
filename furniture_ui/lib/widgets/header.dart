@@ -14,12 +14,14 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
+
     return Stack(
       children: [
         Container(
           height: headerHeight,
           width: 100.w,
-          color: Color(0xffFDD148),
+          color: themeData.secondaryHeaderColor,
         ),
         Positioned(
           bottom: headerHeight * .2,
@@ -29,7 +31,7 @@ class Header extends StatelessWidget {
             width: 90.w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white.withOpacity(.2),
+              color: themeData.shadowColor,
             ),
           ),
         ),
@@ -41,7 +43,7 @@ class Header extends StatelessWidget {
             width: 100.w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white.withOpacity(.2),
+              color: themeData.shadowColor,
             ),
           ),
         ),
@@ -59,22 +61,14 @@ class Header extends StatelessWidget {
               ),
               Text(
                 "Hello Patrick",
-                style: TextStyle(
-                  fontFamily: "Quicksand",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40,
-                ),
+                style: themeData.textTheme.headline1,
               ),
               SizedBox(
                 height: 3.h,
               ),
               Text(
                 "What do you want to buy?",
-                style: TextStyle(
-                  fontFamily: "Quicksand",
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
+                style: themeData.textTheme.headline3,
               ),
               SizedBox(
                 height: 3.h,

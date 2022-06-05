@@ -11,12 +11,13 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData themeData = Theme.of(context);
     return Container(
       width: 100.w,
       height: headerHeight / 4,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
+        color: themeData.cardColor,
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(.7),
@@ -28,13 +29,11 @@ class SearchBar extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: "Search",
-          hintStyle: TextStyle(
-            color: Colors.grey,
-          ),
+          hintStyle: themeData.textTheme.subtitle1,
           contentPadding: EdgeInsets.all(20),
           prefixIcon: Icon(
             Icons.search,
-            color: Color(0xfffee16b),
+            color: themeData.primaryColor,
           ),
         ),
       ),
