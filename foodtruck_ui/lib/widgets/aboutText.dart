@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class AboutText extends StatelessWidget {
   const AboutText({
     Key? key,
-    required this.scrWidth,
   }) : super(key: key);
-
-  final double scrWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +43,7 @@ class AboutText extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 5,
+              width: 2.w,
             ),
             Icon(
               Icons.location_on,
@@ -62,7 +60,7 @@ class AboutText extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 10,
+          height: 2.h,
         ),
         Row(
           children: [
@@ -84,9 +82,9 @@ class AboutText extends StatelessWidget {
           ],
         ),
         Divider(
-          height: 30,
+          height: 3.h,
           color: Colors.black,
-          endIndent: scrWidth - 100,
+          endIndent: 100.w - 100,
         ),
         Text(
           "featured Items".toUpperCase(),

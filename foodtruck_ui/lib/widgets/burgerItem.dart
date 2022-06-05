@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:foodtruck_ui/widgets/burger_item_image.dart';
 
 class BurgerItem extends StatelessWidget {
-  final double scrWidth;
-  final double scrHeight;
+  const BurgerItem({Key? key, required this.image}) : super(key: key);
   final String image;
-  const BurgerItem(
-      {Key? key,
-      required this.scrWidth,
-      required this.scrHeight,
-      required this.image})
-      : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,21 +13,7 @@ class BurgerItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: scrHeight / 7,
-            width: scrWidth / 4,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  this.image,
-                ),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-            ),
-          ),
+          BurgerItemImage(image: image),
           SizedBox(
             width: 20,
           ),

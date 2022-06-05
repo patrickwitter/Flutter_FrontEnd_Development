@@ -1,19 +1,17 @@
 import "package:flutter/material.dart";
-import 'package:foodtruck_ui/widgets/selectedPhoto.dart';
+import 'package:foodtruck_ui/widgets/header_nav.dart';
+import 'package:sizer/sizer.dart';
+import 'package:foodtruck_ui/widgets/header_rowicons.dart';
 
 class Header extends StatefulWidget {
   Header({
     Key? key,
-    required this.scrHeight,
     required this.photos,
     required this.photoIndex,
-    required this.scrWidth,
   }) : super(key: key);
 
-  final double scrHeight;
   final List<String> photos;
   int photoIndex;
-  double scrWidth;
 
   @override
   _HeaderState createState() => _HeaderState();
@@ -39,7 +37,7 @@ class _HeaderState extends State<Header> {
     return Stack(
       children: [
         Container(
-          height: widget.scrHeight / 3,
+          height: 33.33.h,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -50,86 +48,39 @@ class _HeaderState extends State<Header> {
           ),
         ),
         Positioned.fill(
-          left: widget.scrWidth / 10,
-          bottom: 10,
+          left: 10.w,
+          bottom: 3.h,
           child: Align(
             alignment: Alignment.bottomLeft,
-            child: Row(
-              children: [
-                Icon(
-                  Icons.star,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.orange,
-                ),
-                Icon(
-                  Icons.star,
-                  color: Colors.orange,
-                ),
-                SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  "4.0",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 25,
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                SelectedPhoto(
-                    numberOfDots: widget.photos.length,
-                    photoIndex: widget.photoIndex)
-              ],
+            child: RowIcons(
+              photoIndex: widget.photoIndex,
+              photosLength: widget.photos.length,
             ),
           ),
         ),
         Positioned.fill(
-          top: 15,
+          top: 2.5.h,
           child: Align(
             alignment: Alignment.topLeft,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(
-                    Icons.arrow_back_ios_new,
-                    size: 30,
-                    color: Colors.white,
-                  ),
-                  Icon(
-                    Icons.favorite_border_rounded,
-                    size: 30,
-                    color: Colors.red,
-                  ),
-                ],
-              ),
+              padding: EdgeInsets.all(2.w),
+              child: const HeaderNav(),
             ),
           ),
         ),
         GestureDetector(
           onTap: () => _increment(),
           child: Container(
-            height: widget.scrHeight / 3,
-            width: widget.scrWidth,
+            height: 33.33.h,
+            width: 100.w,
             color: Colors.transparent,
           ),
         ),
         GestureDetector(
           onTap: () => _decrement(),
           child: Container(
-            height: widget.scrHeight / 3,
-            width: widget.scrWidth / 2,
+            height: 33.33.h,
+            width: 50.w,
             color: Colors.transparent,
           ),
         ),

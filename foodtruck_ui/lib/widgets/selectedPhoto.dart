@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SelectedPhoto extends StatelessWidget {
   final int numberOfDots;
@@ -10,8 +11,9 @@ class SelectedPhoto extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 10,
-        height: 10,
+        constraints: BoxConstraints(maxHeight: 30, maxWidth: 30),
+        width: 3.w,
+        height: 3.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.white,
@@ -24,8 +26,9 @@ class SelectedPhoto extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 10,
-        height: 10,
+        constraints: BoxConstraints(maxHeight: 30, maxWidth: 30),
+        width: 3.w,
+        height: 3.w,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Colors.grey,
