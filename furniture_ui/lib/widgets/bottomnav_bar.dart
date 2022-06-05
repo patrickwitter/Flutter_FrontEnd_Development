@@ -13,7 +13,7 @@ class BottomNavBar extends StatelessWidget {
     return TabBar(
       controller: controller,
       indicatorColor: Colors.yellow,
-      tabs: <Widget>[
+      tabs: const <Widget>[
         Tab(icon: Icon(Icons.event_seat, color: Colors.yellow)),
         Tab(icon: Icon(Icons.timer, color: Colors.grey)),
         Tab(icon: Icon(Icons.shopping_cart, color: Colors.grey)),

@@ -27,11 +27,11 @@ class ListItemText extends StatelessWidget {
                     style: themeData.textTheme.headline4,
                   ),
                   (isfav
-                      ? Icon(
+                      ? const Icon(
                           Icons.favorite_border_outlined,
                           color: Colors.red,
                         )
-                      : Icon(
+                      : const Icon(
                           Icons.favorite_border_outlined,
                           color: Colors.grey,
                         )),
@@ -42,8 +42,8 @@ class ListItemText extends StatelessWidget {
               height: 1.h,
             ),
             Text(
-              "Scandinavian small sized double sofa imported" +
-                  "full leather / Dale Italia oil wax leather black",
+              "Scandinavian small sized double sofa imported"
+              "full leather / Dale Italia oil wax leather black",
               style: themeData.textTheme.bodyText2,
             ),
             SizedBox(
@@ -52,6 +52,7 @@ class ListItemText extends StatelessWidget {
             Row(
               children: [
                 Expanded(
+                  flex: 1,
                   child: Container(
                     alignment: Alignment.center,
                     color: themeData.canvasColor,
@@ -61,9 +62,9 @@ class ListItemText extends StatelessWidget {
                       style: themeData.textTheme.caption,
                     ),
                   ),
-                  flex: 1,
                 ),
                 Expanded(
+                  flex: 2,
                   child: Container(
                     alignment: Alignment.center,
                     color: themeData.primaryColor,
@@ -73,7 +74,6 @@ class ListItemText extends StatelessWidget {
                       style: themeData.textTheme.caption,
                     ),
                   ),
-                  flex: 2,
                 ),
               ],
             )

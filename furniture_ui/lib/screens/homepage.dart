@@ -51,12 +51,12 @@ class _HomePageState extends State<HomePage>
             child: TabRow(tabHeight: tabHeight),
           ),
           ListView(
-            key: Key("HomeList"),
+            key: const Key("HomeList"),
             shrinkWrap: true,
             primary: false,
             children: [
               ListItem(
-                key: Key("list1"),
+                key: const Key("list1"),
                 listItemHeight: listItemHeight,
                 imgStr: "lib/assets/chair.jpg",
                 isfav: true,
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage>
                 isfav: false,
               ),
               ListItem(
-                key: Key("list3"),
+                key: const Key("list3"),
                 listItemHeight: listItemHeight,
                 imgStr: "lib/assets/ottoman.jpg",
                 isfav: true,

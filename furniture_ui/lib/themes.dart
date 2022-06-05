@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 ThemeData appTheme = ThemeData.light().copyWith(
-  scaffoldBackgroundColor: Color(0xffefefef),
+  scaffoldBackgroundColor: const Color(0xffefefef),
   cardColor: Colors.white,
   textTheme: _appTextTheme,
-  primaryColor: Color(0xfffee16b),
-  secondaryHeaderColor: Color(0xffFDD148),
+  primaryColor: const Color(0xfffee16b),
+  secondaryHeaderColor: const Color(0xffFDD148),
   shadowColor: Colors.white.withOpacity(.2),
-  canvasColor: Color(0xfffac83e),
-  colorScheme: ColorScheme.light().copyWith(
-    secondary: Color(0xfffee16b),
+  canvasColor: const Color(0xfffac83e),
+  colorScheme: const ColorScheme.light().copyWith(
+    secondary: const Color(0xfffee16b),
   ),
 );
 
@@ -43,5 +43,11 @@ TextTheme _appTextTheme = TextTheme(
   caption: TextStyle(
     fontSize: 12.sp,
     color: Colors.white,
+  ),
+  subtitle2: TextStyle(
+    fontFamily: "Quicksand",
+    fontWeight: FontWeight.bold,
+    fontSize: 12.sp,
+    color: Colors.grey,
   ),
 );

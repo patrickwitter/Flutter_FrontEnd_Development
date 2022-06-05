@@ -30,7 +30,7 @@ class SearchBar extends StatelessWidget {
           border: InputBorder.none,
           hintText: "Search",
           hintStyle: themeData.textTheme.subtitle1,
-          contentPadding: EdgeInsets.all(20),
+          contentPadding: EdgeInsets.all(5.w),
           prefixIcon: Icon(
             Icons.search,
             color: themeData.primaryColor,

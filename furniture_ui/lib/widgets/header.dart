@@ -55,7 +55,7 @@ class Header extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              NavBar(),
+              const NavBar(),
               SizedBox(
                 height: 3.h,
               ),

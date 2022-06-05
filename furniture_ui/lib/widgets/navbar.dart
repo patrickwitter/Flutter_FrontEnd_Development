@@ -9,11 +9,11 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      key: Key("NavBar"),
+      key: const Key("NavBar"),
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Container(
-          constraints: BoxConstraints(maxHeight: 100, maxWidth: 100),
+          constraints: const BoxConstraints(maxHeight: 100, maxWidth: 100),
           height: 15.w,
           width: 15.w,
           decoration: BoxDecoration(
@@ -23,12 +23,12 @@ class NavBar extends StatelessWidget {
               color: Colors.white,
               width: 2,
             ),
-            image: DecorationImage(
+            image: const DecorationImage(
                 image: AssetImage("lib/assets/chris.jpg"), fit: BoxFit.cover),
           ),
         ),
         ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: 100, maxWidth: 100),
+          constraints: const BoxConstraints(maxHeight: 100, maxWidth: 100),
           child: Icon(
             Icons.menu,
             color: Colors.white,
