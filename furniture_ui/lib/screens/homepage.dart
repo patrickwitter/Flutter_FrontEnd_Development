@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:furniture_ui/widgets/bottomnav_bar.dart';
 import 'package:furniture_ui/widgets/header.dart';
 import 'package:furniture_ui/widgets/listItem.dart';
 import 'package:furniture_ui/widgets/tabRow.dart';
+import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,36 +30,24 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    var scrWidth = MediaQuery.of(context).size.width;
-    var scrHeight = MediaQuery.of(context).size.height;
-    var headerHeight = scrHeight / 3;
-    var tabHeight = scrHeight / 8;
-    var listItemHeight = scrHeight / 5;
+    var tabHeight = 12.5.h;
+    var listItemHeight = 20.h;
 
     return Scaffold(
-      backgroundColor: HexColor("#efefef"),
+      backgroundColor: Color(0xffefefef),
       bottomNavigationBar: Material(
         color: Colors.white,
-        child: TabBar(
-          controller: controller,
-          indicatorColor: Colors.yellow,
-          tabs: <Widget>[
-            Tab(icon: Icon(Icons.event_seat, color: Colors.yellow)),
-            Tab(icon: Icon(Icons.timer, color: Colors.grey)),
-            Tab(icon: Icon(Icons.shopping_cart, color: Colors.grey)),
-            Tab(icon: Icon(Icons.person_outline, color: Colors.grey))
-          ],
-        ),
+        child: BottomNavBar(controller: controller),
       ),
       body: ListView(
         shrinkWrap: true,
         children: [
-          Header(headerHeight: headerHeight, scrWidth: scrWidth),
+          Header(),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 8.0,
+            padding: EdgeInsets.symmetric(
+              vertical: 1.h,
             ),
-            child: TabRow(scrWidth: scrWidth, tabHeight: tabHeight),
+            child: TabRow(tabHeight: tabHeight),
           ),
           ListView(
             key: Key("HomeList"),
@@ -67,20 +56,17 @@ class _HomePageState extends State<HomePage>
             children: [
               ListItem(
                 key: Key("list1"),
-                scrWidth: scrWidth,
                 listItemHeight: listItemHeight,
                 imgStr: "lib/assets/chair.jpg",
                 isfav: true,
               ),
               ListItem(
-                scrWidth: scrWidth,
                 listItemHeight: listItemHeight,
                 imgStr: "lib/assets/anotherchair.jpg",
                 isfav: false,
               ),
               ListItem(
                 key: Key("list3"),
-                scrWidth: scrWidth,
                 listItemHeight: listItemHeight,
                 imgStr: "lib/assets/ottoman.jpg",
                 isfav: true,

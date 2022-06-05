@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:furniture_ui/widgets/navbar.dart';
+import 'package:furniture_ui/widgets/searchbar.dart';
+import 'package:sizer/sizer.dart';
 
 // This is the header of the app that contains the profile image
 // as well as the search bar
 class Header extends StatelessWidget {
-  const Header({
+  Header({
     Key? key,
-    required this.headerHeight,
-    required this.scrWidth,
   }) : super(key: key);
 
-  final double headerHeight;
-  final double scrWidth;
+  final double headerHeight = 33.33.h;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +18,15 @@ class Header extends StatelessWidget {
       children: [
         Container(
           height: headerHeight,
-          width: scrWidth,
-          color: HexColor("#FDD148"),
+          width: 100.w,
+          color: Color(0xffFDD148),
         ),
         Positioned(
           bottom: headerHeight * .2,
-          right: scrWidth * .3,
+          right: 33.33.w,
           child: Container(
             height: headerHeight,
-            width: scrWidth * .9,
+            width: 90.w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white.withOpacity(.2),
@@ -36,10 +35,10 @@ class Header extends StatelessWidget {
         ),
         Positioned(
           bottom: headerHeight * .4,
-          left: scrWidth * .25,
+          left: 25.w,
           child: Container(
             height: headerHeight * .9,
-            width: scrWidth,
+            width: 100.w,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white.withOpacity(.2),
@@ -47,26 +46,27 @@ class Header extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 10,
-            horizontal: 5,
+          padding: EdgeInsets.symmetric(
+            vertical: 2.h,
+            horizontal: 2.w,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               NavBar(),
               SizedBox(
-                height: 30,
+                height: 3.h,
               ),
               Text(
                 "Hello Patrick",
                 style: TextStyle(
-                    fontFamily: "Quicksand",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40),
+                  fontFamily: "Quicksand",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                ),
               ),
               SizedBox(
-                height: 20,
+                height: 3.h,
               ),
               Text(
                 "What do you want to buy?",
@@ -77,91 +77,12 @@ class Header extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 3.h,
               ),
-              SearchBar(scrWidth: scrWidth, headerHeight: headerHeight)
+              SearchBar(headerHeight: headerHeight)
             ],
           ),
         ),
-      ],
-    );
-  }
-}
-
-class SearchBar extends StatelessWidget {
-  const SearchBar({
-    Key? key,
-    required this.scrWidth,
-    required this.headerHeight,
-  }) : super(key: key);
-
-  final double scrWidth;
-  final double headerHeight;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: scrWidth,
-      height: headerHeight / 4,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(.7),
-            blurRadius: 10,
-          ),
-        ],
-      ),
-      child: TextFormField(
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: "Search",
-          hintStyle: TextStyle(
-            color: Colors.grey,
-          ),
-          contentPadding: EdgeInsets.all(20),
-          prefixIcon: Icon(
-            Icons.search,
-            color: HexColor("#fee16b"),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class NavBar extends StatelessWidget {
-  const NavBar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      key: Key("NavBar"),
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.red,
-            border: Border.all(
-              style: BorderStyle.solid,
-              color: Colors.white,
-              width: 2,
-            ),
-            image: DecorationImage(
-                image: AssetImage("lib/assets/chris.jpg"), fit: BoxFit.cover),
-          ),
-        ),
-        Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 40,
-        )
       ],
     );
   }

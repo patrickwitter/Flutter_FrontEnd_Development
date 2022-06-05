@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class TabRow extends StatelessWidget {
-  const TabRow({
+  TabRow({
     Key? key,
-    required this.scrWidth,
     required this.tabHeight,
   }) : super(key: key);
 
-  final double scrWidth;
   final double tabHeight;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: scrWidth,
+      width: 100.w,
       height: tabHeight,
       color: Colors.white,
       child: Padding(
@@ -26,25 +25,21 @@ class TabRow extends StatelessWidget {
           children: [
             TabItem(
               tabHeight: tabHeight,
-              scrWidth: scrWidth,
               imgStr: "lib/assets/sofas.png",
               description: "Sofa",
             ),
             TabItem(
               tabHeight: tabHeight,
-              scrWidth: scrWidth,
               imgStr: "lib/assets/wardrobe.png",
               description: "Wardrobe",
             ),
             TabItem(
               tabHeight: tabHeight,
-              scrWidth: scrWidth,
               imgStr: "lib/assets/desks.png",
               description: "Desk",
             ),
             TabItem(
               tabHeight: tabHeight,
-              scrWidth: scrWidth,
               imgStr: "lib/assets/dresser.png",
               description: "Dresser",
             ),
@@ -59,13 +54,11 @@ class TabItem extends StatelessWidget {
   const TabItem({
     Key? key,
     required this.tabHeight,
-    required this.scrWidth,
     required this.imgStr,
     required this.description,
   }) : super(key: key);
 
   final double tabHeight;
-  final double scrWidth;
   final String imgStr;
   final String description;
   @override
@@ -75,7 +68,7 @@ class TabItem extends StatelessWidget {
       children: [
         Container(
           height: tabHeight / 2,
-          width: scrWidth / 7,
+          width: 15.w,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(imgStr),
