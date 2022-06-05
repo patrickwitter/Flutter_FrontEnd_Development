@@ -14,13 +14,13 @@ class BurgerItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           BurgerItemImage(image: image),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
+              children: const [
                 Text(
                   "Maple Mustard Tempeh",
                   style: TextStyle(

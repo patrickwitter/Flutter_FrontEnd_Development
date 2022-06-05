@@ -8,6 +8,7 @@ class FoodTruckHome extends StatefulWidget {
   const FoodTruckHome({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _FoodTruckHomeState createState() => _FoodTruckHomeState();
 }
 
@@ -40,7 +41,7 @@ class _FoodTruckHomeState extends State<FoodTruckHome> {
               top: scrHeight / 20,
               bottom: scrHeight / 30,
             ),
-            child: AboutText(),
+            child: const AboutText(),
           ),
           ListView(
             primary: false,

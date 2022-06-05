@@ -16,11 +16,11 @@ class BurgerItemImage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            this.image,
+            image,
           ),
           fit: BoxFit.cover,
         ),
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topRight: Radius.circular(10),
           bottomRight: Radius.circular(10),
         ),

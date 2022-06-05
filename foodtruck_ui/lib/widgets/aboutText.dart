@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -13,14 +14,14 @@ class AboutText extends StatelessWidget {
       children: [
         Text(
           "Open now until 7pm".toUpperCase(),
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.grey,
             fontSize: 18,
             fontWeight: FontWeight.bold,
             fontFamily: "Montserrat",
           ),
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
           child: Text(
             "The Cinnamon Snail",
@@ -34,7 +35,7 @@ class AboutText extends StatelessWidget {
         ),
         Row(
           children: [
-            Text(
+            const Text(
               "17th st & Union Sq East",
               style: TextStyle(
                 color: Colors.grey,
@@ -45,11 +46,11 @@ class AboutText extends StatelessWidget {
             SizedBox(
               width: 2.w,
             ),
-            Icon(
+            const Icon(
               Icons.location_on,
               color: Colors.grey,
             ),
-            Text(
+            const Text(
               "400ft Away",
               style: TextStyle(
                 color: Colors.grey,
@@ -68,7 +69,7 @@ class AboutText extends StatelessWidget {
               Icons.wifi,
               color: Colors.green[700],
             ),
-            SizedBox(
+            const SizedBox(
               width: 5,
             ),
             Text(

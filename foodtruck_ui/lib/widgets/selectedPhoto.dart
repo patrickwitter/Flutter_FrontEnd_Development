@@ -5,13 +5,18 @@ class SelectedPhoto extends StatelessWidget {
   final int numberOfDots;
   final int photoIndex;
 
-  SelectedPhoto({required this.numberOfDots, required this.photoIndex});
+  // ignore: use_key_in_widget_constructors
+  const SelectedPhoto({
+    Key? key,
+    required this.numberOfDots,
+    required this.photoIndex,
+  });
 
   Widget _selectedPhoto() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        constraints: BoxConstraints(maxHeight: 30, maxWidth: 30),
+        constraints: const BoxConstraints(maxHeight: 30, maxWidth: 30),
         width: 3.w,
         height: 3.w,
         decoration: BoxDecoration(
@@ -26,7 +31,7 @@ class SelectedPhoto extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        constraints: BoxConstraints(maxHeight: 30, maxWidth: 30),
+        constraints: const BoxConstraints(maxHeight: 30, maxWidth: 30),
         width: 3.w,
         height: 3.w,
         decoration: BoxDecoration(
@@ -46,8 +51,8 @@ class SelectedPhoto extends StatelessWidget {
     }
 
     return Row(
-      children: dots,
       mainAxisAlignment: MainAxisAlignment.start,
+      children: dots,
     );
   }
 }

@@ -9,7 +9,7 @@ class HeaderNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+      children: const [
         Icon(
           Icons.arrow_back_ios_new,
           size: 30,
