@@ -4,12 +4,12 @@ class NavButton extends StatelessWidget {
   final Alignment _alignment;
   final IconData _icon;
 
-  const NavButton(
-      {Key key,
-      @required Alignment alignmentPos,
-      @required IconData buttonIcon})
-      : this._alignment = alignmentPos,
-        this._icon = buttonIcon,
+  const NavButton({
+    Key? key,
+    required Alignment alignmentPos,
+    required IconData buttonIcon,
+  })  : _alignment = alignmentPos,
+        _icon = buttonIcon,
         super(key: key);
 
   @override

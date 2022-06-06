@@ -4,7 +4,7 @@ import 'package:surf_instructor_ui/models/instructor.dart';
 
 class GridCard extends StatelessWidget {
   final Instructor instructor;
-  const GridCard({Key key, @required this.instructor}) : super(key: key);
+  const GridCard({Key? key, required this.instructor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class GridCard extends StatelessWidget {
                       offset: Offset(0, 3),
                       blurRadius: 8,
                       spreadRadius: 10,
-                      color: Colors.grey[400].withOpacity(.7),
+                      color: Colors.grey[400]!.withOpacity(.7),
                     ),
                   ]),
             ),

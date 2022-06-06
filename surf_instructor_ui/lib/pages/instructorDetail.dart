@@ -7,17 +7,17 @@ import 'package:surf_instructor_ui/widgets/bottomRightButton.dart';
 import 'package:surf_instructor_ui/widgets/navbutton.dart';
 
 class InstructorDetail extends StatefulWidget {
-  const InstructorDetail({Key key}) : super(key: key);
+  const InstructorDetail({Key? key}) : super(key: key);
 
   @override
   _InstructorDetailState createState() => _InstructorDetailState();
 }
 
 class _InstructorDetailState extends State<InstructorDetail> {
-  Instructor instructor;
+  late Instructor instructor;
   @override
   Widget build(BuildContext context) {
-    instructor = ModalRoute.of(context).settings.arguments;
+    instructor = ModalRoute.of(context)!.settings.arguments as Instructor;
 
     return Scaffold(
       body: Stack(

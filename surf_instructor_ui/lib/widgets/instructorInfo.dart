@@ -9,8 +9,8 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class InstructorInfo extends StatelessWidget {
   const InstructorInfo({
-    Key key,
-    @required this.instructor,
+    Key? key,
+    required this.instructor,
   }) : super(key: key);
 
   final Instructor instructor;
@@ -39,14 +39,13 @@ class InstructorInfo extends StatelessWidget {
 
 // ignore: must_be_immutable
 class InstructorDetails extends StatelessWidget {
-  Instructor _instructor;
   InstructorDetails({
-    @required Instructor instructor,
-    Key key,
+    required Instructor instructor,
+    Key? key,
   }) : super(key: key) {
-    this._instructor = instructor;
+    _instructor = instructor;
   }
-
+  late Instructor _instructor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -112,8 +111,8 @@ class InstructorDetails extends StatelessWidget {
 class StarRatingAndReviews extends StatelessWidget {
   //Contains Star rating and number of reviews for the instructor
   const StarRatingAndReviews({
-    Key key,
-    @required Instructor instructor,
+    Key? key,
+    required Instructor instructor,
   })  : _instructor = instructor,
         super(key: key);
 
@@ -157,7 +156,7 @@ class StarRatingAndReviews extends StatelessWidget {
 class ReviewsAndPrograms extends StatelessWidget {
   //Contains the number of reviews and programs for the instructor
   const ReviewsAndPrograms({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

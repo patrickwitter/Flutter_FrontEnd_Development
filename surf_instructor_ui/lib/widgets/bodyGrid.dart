@@ -6,7 +6,7 @@ import 'package:surf_instructor_ui/widgets/gridcard.dart';
 //Contains gridview  for the gridview.
 
 class BodyGrid extends StatelessWidget {
-  const BodyGrid({Key key}) : super(key: key);
+  const BodyGrid({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

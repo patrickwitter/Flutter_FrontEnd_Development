@@ -5,7 +5,7 @@ import 'package:surf_instructor_ui/widgets/bodygrid.dart';
 import 'package:surf_instructor_ui/widgets/header.dart';
 
 class InstructorHome extends StatelessWidget {
-  const InstructorHome({Key key}) : super(key: key);
+  const InstructorHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

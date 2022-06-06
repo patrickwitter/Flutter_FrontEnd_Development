@@ -4,8 +4,8 @@ import 'package:surf_instructor_ui/models/instructor.dart';
 
 class InstructorImage extends StatelessWidget {
   const InstructorImage({
-    Key key,
-    @required this.instructor,
+    Key? key,
+    required this.instructor,
   }) : super(key: key);
 
   final Instructor instructor;

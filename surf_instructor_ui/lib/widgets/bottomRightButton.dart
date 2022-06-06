@@ -3,7 +3,7 @@ import 'package:sizer/sizer.dart';
 
 class BottomRightButton extends StatelessWidget {
   const BottomRightButton({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

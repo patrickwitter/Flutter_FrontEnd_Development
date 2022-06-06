@@ -3,7 +3,11 @@ class Instructor {
   String rating;
   String instructorPic;
 
-  Instructor({this.instructorName, this.rating, this.instructorPic});
+  Instructor({
+    required this.instructorName,
+    required this.rating,
+    required this.instructorPic,
+  });
 
   static var allInstructors = [
     Instructor(
