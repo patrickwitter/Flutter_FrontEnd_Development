@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:surf_instructor_ui/models/instructor.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -9,13 +10,9 @@ import 'package:smooth_star_rating/smooth_star_rating.dart';
 class InstructorInfo extends StatelessWidget {
   const InstructorInfo({
     Key key,
-    @required this.screenWidth,
-    @required this.screenHeight,
     @required this.instructor,
   }) : super(key: key);
 
-  final double screenWidth;
-  final double screenHeight;
   final Instructor instructor;
 
   @override
@@ -23,8 +20,8 @@ class InstructorInfo extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        width: screenWidth,
-        height: screenHeight * (1 / 3) + 25,
+        width: 100.w,
+        height: 100.h * (1 / 3) + 25,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -43,8 +40,10 @@ class InstructorInfo extends StatelessWidget {
 // ignore: must_be_immutable
 class InstructorDetails extends StatelessWidget {
   Instructor _instructor;
-  InstructorDetails({@required Instructor instructor, Key key})
-      : super(key: key) {
+  InstructorDetails({
+    @required Instructor instructor,
+    Key key,
+  }) : super(key: key) {
     this._instructor = instructor;
   }
 

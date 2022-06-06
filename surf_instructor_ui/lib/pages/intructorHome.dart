@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:surf_instructor_ui/widgets/bodyGrid.dart';
+import 'package:sizer/sizer.dart';
+import 'package:surf_instructor_ui/widgets/bodygrid.dart';
 
 import 'package:surf_instructor_ui/widgets/header.dart';
 
@@ -11,11 +12,11 @@ class InstructorHome extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: EdgeInsets.all(4.w),
         child: ListView(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 20),
+              padding: EdgeInsets.only(top: 3.h, bottom: 3.h),
               child: Header(),
             ),
             BodyGrid(),

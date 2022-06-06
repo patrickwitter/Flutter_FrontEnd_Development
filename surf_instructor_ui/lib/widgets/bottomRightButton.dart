@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class BottomRightButton extends StatelessWidget {
   const BottomRightButton({
     Key key,
-    @required this.screenHeight,
   }) : super(key: key);
-
-  final double screenHeight;
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomRight,
       child: Container(
-        height: screenHeight / 8,
-        width: screenHeight / 6,
+        height: 12.5.h,
+        width: 17.h,
         decoration: BoxDecoration(
           color: Colors.orange[800],
           borderRadius: BorderRadius.only(
@@ -25,7 +23,7 @@ class BottomRightButton extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 10,
+                height: 2.h,
               ),
               Text(
                 ">",

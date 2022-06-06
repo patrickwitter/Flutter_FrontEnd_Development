@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:surf_instructor_ui/models/instructor.dart';
 
 class InstructorImage extends StatelessWidget {
   const InstructorImage({
     Key key,
-    @required this.screenHeight,
-    @required this.screenWidth,
     @required this.instructor,
   }) : super(key: key);
 
-  final double screenHeight;
-  final double screenWidth;
   final Instructor instructor;
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      top: screenHeight * (1.8 / 3),
-      left: screenWidth - 130,
+      top: 60.h,
+      left: 100.w - 130,
       child: Hero(
         tag: instructor.instructorName,
         child: Container(

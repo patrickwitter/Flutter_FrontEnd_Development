@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 // Contains header portion of the app which has title , navigation buttons and search bar
 
 class Header extends StatelessWidget {
@@ -19,9 +20,9 @@ class Header extends StatelessWidget {
             Icon(Icons.menu),
           ],
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 2.h),
         Padding(
-          padding: const EdgeInsets.only(bottom: 15),
+          padding: EdgeInsets.only(bottom: 2.h),
           child: Row(
             children: [
               Text(
@@ -47,7 +48,7 @@ class Header extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 2.h,
         ),
         TextField(
           decoration: InputDecoration(
