@@ -8,7 +8,7 @@ class OptionButton extends StatelessWidget {
   final double width;
 
   const OptionButton(
-      {Key key, @required this.text, @required this.icon, @required this.width})
+      {Key? key, required this.text, required this.icon, required this.width})
       : super(key: key);
 
   @override

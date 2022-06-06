@@ -3,11 +3,11 @@ import 'package:house_ui/utils/constants.dart';
 
 class BorderIcon extends StatelessWidget {
   final Widget child;
-  final EdgeInsets padding;
-  final double width, height;
+  final EdgeInsets? padding;
+  final double? width, height;
 
   const BorderIcon(
-      {Key key, @required this.child, this.padding, this.width, this.height})
+      {Key? key, required this.child, this.padding, this.width, this.height})
       : super(key: key);
 
   @override

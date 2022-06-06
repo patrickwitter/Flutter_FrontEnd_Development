@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:house_ui/widgets/BorderIcon.dart';
+import 'package:house_ui/widgets/InformationTile.dart';
 import 'package:house_ui/widgets/OptionButton.dart';
 import 'package:house_ui/utils/constants.dart';
 import 'package:house_ui/utils/custom_functions.dart';
@@ -8,7 +9,7 @@ import 'package:house_ui/utils/widget_functions.dart';
 class DetailPage extends StatelessWidget {
   final dynamic itemData;
 
-  const DetailPage({Key key, @required this.itemData}) : super(key: key);
+  const DetailPage({Key? key, required this.itemData}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -166,41 +167,6 @@ class DetailPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class InformationTile extends StatelessWidget {
-  final String content;
-  final String name;
-
-  const InformationTile({Key key, @required this.content, @required this.name})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final ThemeData themeData = Theme.of(context);
-    final Size size = MediaQuery.of(context).size;
-    final double tileSize = size.width * 0.20;
-    return Container(
-      margin: const EdgeInsets.only(left: 25),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          BorderIcon(
-              width: tileSize,
-              height: tileSize,
-              child: Text(
-                content,
-                style: themeData.textTheme.headline3,
-              )),
-          addVerticalSpace(15),
-          Text(
-            name,
-            style: themeData.textTheme.headline6,
-          )
-        ],
       ),
     );
   }
