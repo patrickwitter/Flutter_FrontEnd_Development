@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:house_ui/widgets/BorderIcon.dart';
 import 'package:house_ui/widgets/LandingPage/choiceoption.dart';
 import 'package:house_ui/widgets/LandingPage/navbar.dart';
 import 'package:house_ui/widgets/LandingPage/realestate_item.dart';

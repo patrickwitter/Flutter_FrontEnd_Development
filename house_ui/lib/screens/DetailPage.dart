@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:house_ui/widgets/BorderIcon.dart';
+import 'package:house_ui/widgets/DetailPage/headertext.dart';
+import 'package:house_ui/widgets/DetailPage/navbar.dart';
+import 'package:house_ui/widgets/DetailPage/scrollview.dart';
 import 'package:house_ui/widgets/InformationTile.dart';
 import 'package:house_ui/widgets/OptionButton.dart';
 import 'package:house_ui/utils/constants.dart';
@@ -37,32 +40,7 @@ class DetailPage extends StatelessWidget {
                           top: padding,
                           child: Padding(
                             padding: sidePadding,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: BorderIcon(
-                                    height: 50,
-                                    width: 50,
-                                    child: Icon(
-                                      Icons.keyboard_backspace,
-                                      color: COLOR_BLACK,
-                                    ),
-                                  ),
-                                ),
-                                BorderIcon(
-                                  height: 50,
-                                  width: 50,
-                                  child: Icon(
-                                    Icons.favorite_border,
-                                    color: COLOR_BLACK,
-                                  ),
-                                ),
-                              ],
-                            ),
+                            child: DetailNavBar(),
                           ),
                         ),
                       ],
@@ -70,33 +48,8 @@ class DetailPage extends StatelessWidget {
                     addVerticalSpace(padding),
                     Padding(
                       padding: sidePadding,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "${formatCurrency(itemData["amount"])}",
-                                style: themeData.textTheme.headline1,
-                              ),
-                              addVerticalSpace(5),
-                              Text(
-                                "\$${itemData["address"]}",
-                                style: themeData.textTheme.subtitle2,
-                              ),
-                            ],
-                          ),
-                          BorderIcon(
-                            child: Text(
-                              "20 Hours ago",
-                              style: themeData.textTheme.headline5,
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 15),
-                          )
-                        ],
-                      ),
+                      child: DetailHeaderText(
+                          itemData: itemData, themeData: themeData),
                     ),
                     addVerticalSpace(padding),
                     Padding(
@@ -107,30 +60,7 @@ class DetailPage extends StatelessWidget {
                       ),
                     ),
                     addVerticalSpace(padding),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: BouncingScrollPhysics(),
-                      child: Row(
-                        children: [
-                          InformationTile(
-                            content: "${itemData["area"]}",
-                            name: "Square Foot",
-                          ),
-                          InformationTile(
-                            content: "${itemData["bedrooms"]}",
-                            name: "Bedrooms",
-                          ),
-                          InformationTile(
-                            content: "${itemData["bathrooms"]}",
-                            name: "Bathrooms",
-                          ),
-                          InformationTile(
-                            content: "${itemData["garage"]}",
-                            name: "Garage",
-                          )
-                        ],
-                      ),
-                    ),
+                    DeatilScrollView(itemData: itemData),
                     addVerticalSpace(padding),
                     Padding(
                       padding: sidePadding,
