@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:surf_instructor_ui/models/instructor.dart';
 
 //Contains gridview and grid card designs for the gridview.
@@ -45,8 +46,8 @@ class GridCard extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 150.0,
-            width: 100.0,
+            height: 10.h,
+            width: 10.w,
             color: Colors.transparent,
           ),
           Positioned(
