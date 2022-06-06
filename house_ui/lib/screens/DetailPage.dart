@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:house_ui/widgets/BorderIcon.dart';
 import 'package:house_ui/widgets/DetailPage/headertext.dart';
 import 'package:house_ui/widgets/DetailPage/navbar.dart';
 import 'package:house_ui/widgets/DetailPage/scrollview.dart';
-import 'package:house_ui/widgets/InformationTile.dart';
 import 'package:house_ui/widgets/OptionButton.dart';
 import 'package:house_ui/utils/constants.dart';
-import 'package:house_ui/utils/custom_functions.dart';
 import 'package:house_ui/utils/widget_functions.dart';
 
 class DetailPage extends StatelessWidget {
