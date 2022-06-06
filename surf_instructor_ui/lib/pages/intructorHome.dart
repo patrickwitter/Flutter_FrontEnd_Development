@@ -17,9 +17,9 @@ class InstructorHome extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(top: 3.h, bottom: 3.h),
-              child: Header(),
+              child: const Header(),
             ),
-            BodyGrid(),
+            const BodyGrid(),
           ],
         ),
       ),

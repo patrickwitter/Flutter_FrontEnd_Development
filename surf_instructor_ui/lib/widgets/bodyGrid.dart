@@ -11,12 +11,12 @@ class BodyGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var instructors = Instructor.allInstructors;
-    return Container(
+    return SizedBox(
       height: 100.h - 300,
       child: GridView.builder(
         primary: false,
         shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 5,
           mainAxisSpacing: 5,

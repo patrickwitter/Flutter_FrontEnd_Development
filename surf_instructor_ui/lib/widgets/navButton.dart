@@ -15,7 +15,7 @@ class NavButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: this._alignment,
+      alignment: _alignment,
       child: Padding(
         padding: const EdgeInsets.only(
           top: 50,
@@ -31,7 +31,7 @@ class NavButton extends StatelessWidget {
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: Icon(
-              this._icon,
+              _icon,
               color: Colors.white.withOpacity(0.7),
             ),
           ),

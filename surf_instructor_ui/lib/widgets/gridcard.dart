@@ -31,7 +31,7 @@ class GridCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      offset: Offset(0, 3),
+                      offset: const Offset(0, 3),
                       blurRadius: 8,
                       spreadRadius: 10,
                       color: Colors.grey[400]!.withOpacity(.7),
@@ -62,7 +62,7 @@ class GridCard extends StatelessWidget {
             left: 4.w,
             child: Text(
               instructor.instructorName,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -79,7 +79,7 @@ class GridCard extends StatelessWidget {
                   ),
                   Text(
                     instructor.rating,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 13,
                       color: Colors.grey,
                       fontWeight: FontWeight.bold,

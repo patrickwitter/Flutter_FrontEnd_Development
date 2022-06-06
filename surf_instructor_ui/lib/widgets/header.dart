@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             Icon(Icons.arrow_back_rounded),
             Icon(Icons.menu),
           ],
@@ -28,20 +28,20 @@ class Header extends StatelessWidget {
               Text(
                 "Santa Monica, CA",
                 style: GoogleFonts.tinos(
-                  textStyle: TextStyle(
+                  textStyle: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
-              Icon(
+              const Icon(
                 Icons.arrow_drop_down,
                 size: 40,
               )
             ],
           ),
         ),
-        Text(
+        const Text(
           "Best Surfing Instructor in Santa Monica, California",
           style: TextStyle(
             fontWeight: FontWeight.w600,
@@ -57,8 +57,8 @@ class Header extends StatelessWidget {
               fontWeight: FontWeight.bold,
               color: Colors.grey[800],
             ),
-            prefixIcon: Icon(Icons.search_rounded),
-            suffixIcon: Icon(Icons.filter_alt_outlined),
+            prefixIcon: const Icon(Icons.search_rounded),
+            suffixIcon: const Icon(Icons.filter_alt_outlined),
           ),
         )
       ],

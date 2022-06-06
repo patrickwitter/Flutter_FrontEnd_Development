@@ -28,7 +28,7 @@ class _InstructorDetailState extends State<InstructorDetail> {
           ),
           Container(
             height: 66.66.h,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("lib/assets/surfing.jpg"),
                 fit: BoxFit.cover,
@@ -38,7 +38,7 @@ class _InstructorDetailState extends State<InstructorDetail> {
           InstructorInfo(
             instructor: instructor,
           ),
-          BottomRightButton(),
+          const BottomRightButton(),
           InstructorImage(instructor: instructor),
           Positioned(
             top: 25.h + 50,
@@ -50,7 +50,7 @@ class _InstructorDetailState extends State<InstructorDetail> {
                 color: Colors.grey.withOpacity(0.7),
                 borderRadius: BorderRadius.circular(25),
               ),
-              child: Center(
+              child: const Center(
                   child: Text(
                 "Explore Programs",
                 style: TextStyle(
@@ -60,11 +60,11 @@ class _InstructorDetailState extends State<InstructorDetail> {
               )),
             ),
           ),
-          NavButton(
+          const NavButton(
             alignmentPos: Alignment.topLeft,
             buttonIcon: Icons.arrow_back,
           ),
-          NavButton(
+          const NavButton(
             alignmentPos: Alignment.topRight,
             buttonIcon: Icons.favorite_border_rounded,
           ),

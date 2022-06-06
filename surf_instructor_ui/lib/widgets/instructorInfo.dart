@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:surf_instructor_ui/models/instructor.dart';
 import 'package:google_fonts/google_fonts.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 // Covers the bottom half of the instructor details pages
@@ -22,7 +23,7 @@ class InstructorInfo extends StatelessWidget {
       child: Container(
         width: 100.w,
         height: 100.h * (1 / 3) + 25,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
@@ -30,7 +31,7 @@ class InstructorInfo extends StatelessWidget {
           ),
         ),
         child: InstructorDetails(
-          instructor: this.instructor,
+          instructor: instructor,
         ),
       ),
     );
@@ -49,19 +50,19 @@ class InstructorDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 30, top: 15),
+      padding: const EdgeInsets.only(left: 30, top: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            this._instructor.instructorName,
+            _instructor.instructorName,
             style: GoogleFonts.merriweather(
-              textStyle: TextStyle(
+              textStyle: const TextStyle(
                 fontSize: 25,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
@@ -71,37 +72,37 @@ class InstructorDetails extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           StarRatingAndReviews(instructor: _instructor),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
-            'Hello, My name is ${this._instructor.instructorName.split(" ")[0]}! I am from Santa Monica, California.' +
-                'I have more than 10 years of experience as a surf instructor ' +
-                'and would love to help you...',
-            style: TextStyle(
+            'Hello, My name is ${_instructor.instructorName.split(" ")[0]}! I am from Santa Monica, California.'
+            "I have more than 10 years of experience as a surf instructor "
+            'and would love to help you...',
+            style: const TextStyle(
               height: 1.5,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           GestureDetector(
             onTap: () {},
-            child: Text("Read more",
+            child: const Text("Read more",
                 style: TextStyle(
                   color: Colors.orange,
                   fontWeight: FontWeight.bold,
                 )),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
-          ReviewsAndPrograms()
+          const ReviewsAndPrograms()
         ],
       ),
     );
@@ -129,21 +130,21 @@ class StarRatingAndReviews extends StatelessWidget {
           borderColor: Colors.orange,
           size: 15,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Text(
-          this._instructor.rating,
-          style: TextStyle(
+          _instructor.rating,
+          style: const TextStyle(
             color: Colors.orange,
             fontSize: 13,
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
-        Text(
+        const Text(
           "(200 Reviews)",
           style: TextStyle(
               color: Colors.grey, fontSize: 12, fontWeight: FontWeight.w500),
@@ -167,7 +168,7 @@ class ReviewsAndPrograms extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               "200",
               style: TextStyle(
@@ -187,12 +188,12 @@ class ReviewsAndPrograms extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 40,
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               "4",
               style: TextStyle(

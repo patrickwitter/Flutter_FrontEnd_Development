@@ -15,7 +15,7 @@ class BottomRightButton extends StatelessWidget {
         width: 17.h,
         decoration: BoxDecoration(
           color: Colors.orange[800],
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(40),
           ),
         ),

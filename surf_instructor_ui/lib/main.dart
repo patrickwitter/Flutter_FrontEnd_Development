@@ -4,10 +4,11 @@ import 'pages/instructorDetail.dart';
 import 'pages/intructorHome.dart';
 
 void main() {
-  runApp(SurfApp());
+  runApp(const SurfApp());
 }
 
 class SurfApp extends StatelessWidget {
+  const SurfApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -16,8 +17,8 @@ class SurfApp extends StatelessWidget {
         title: 'Surf Instructor',
         initialRoute: "/home",
         routes: {
-          "/home": (context) => InstructorHome(),
-          "/detail": (context) => InstructorDetail(),
+          "/home": (context) => const InstructorHome(),
+          "/detail": (context) => const InstructorDetail(),
         },
       ),
     );
