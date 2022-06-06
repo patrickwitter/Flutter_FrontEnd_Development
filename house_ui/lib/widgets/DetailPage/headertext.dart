@@ -22,7 +22,7 @@ class DetailHeaderText extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${formatCurrency(itemData["amount"])}",
+              formatCurrency(itemData["amount"]),
               style: themeData.textTheme.headline1,
             ),
             addVerticalSpace(5),
@@ -33,11 +33,11 @@ class DetailHeaderText extends StatelessWidget {
           ],
         ),
         BorderIcon(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
           child: Text(
             "20 Hours ago",
             style: themeData.textTheme.headline5,
           ),
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         )
       ],
     );

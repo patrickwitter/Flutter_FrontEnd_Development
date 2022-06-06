@@ -14,18 +14,18 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final ThemeData themeData = Theme.of(context);
-    final double padding = 25;
-    final sidePadding = EdgeInsets.symmetric(horizontal: padding);
+    const double padding = 25;
+    const sidePadding = EdgeInsets.symmetric(horizontal: padding);
     return SafeArea(
       child: Scaffold(
         backgroundColor: COLOR_WHITE,
-        body: Container(
+        body: SizedBox(
           width: size.width,
           height: size.height,
           child: Stack(
             children: [
               SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -35,7 +35,7 @@ class DetailPage extends StatelessWidget {
                         Positioned(
                           width: size.width,
                           top: padding,
-                          child: Padding(
+                          child: const Padding(
                             padding: sidePadding,
                             child: DetailNavBar(),
                           ),

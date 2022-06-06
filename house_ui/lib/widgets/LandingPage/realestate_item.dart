@@ -30,7 +30,7 @@ class RealEstateItem extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadius.circular(25.0),
                     child: Image.asset(itemData["image"])),
-                Positioned(
+                const Positioned(
                     top: 15,
                     right: 15,
                     child: BorderIcon(
@@ -44,7 +44,7 @@ class RealEstateItem extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "${formatCurrency(itemData["amount"])}",
+                  formatCurrency(itemData["amount"]),
                   style: themeData.textTheme.headline1,
                 ),
                 addHorizontalSpace(10),

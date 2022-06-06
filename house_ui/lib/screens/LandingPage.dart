@@ -8,6 +8,8 @@ import 'package:house_ui/utils/constants.dart';
 import 'package:house_ui/utils/widget_functions.dart';
 
 class LandingPage extends StatelessWidget {
+  const LandingPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -16,7 +18,7 @@ class LandingPage extends StatelessWidget {
     final sidePadding = EdgeInsets.symmetric(horizontal: padding);
     return SafeArea(
       child: Scaffold(
-        body: Container(
+        body: SizedBox(
           width: size.width,
           height: size.height,
           child: Stack(
@@ -27,7 +29,7 @@ class LandingPage extends StatelessWidget {
                   addVerticalSpace(padding),
                   Padding(
                     padding: sidePadding,
-                    child: LandingNavBar(),
+                    child: const LandingNavBar(),
                   ),
                   addVerticalSpace(20),
                   Padding(
@@ -47,14 +49,14 @@ class LandingPage extends StatelessWidget {
                   ),
                   Padding(
                       padding: sidePadding,
-                      child: Divider(
+                      child: const Divider(
                         height: 25,
                         color: COLOR_GREY,
                       )),
                   addVerticalSpace(10),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    physics: BouncingScrollPhysics(),
+                    physics: const BouncingScrollPhysics(),
                     child: Row(
                       children: [
                         "<\$220,000",
@@ -69,7 +71,7 @@ class LandingPage extends StatelessWidget {
                     child: Padding(
                       padding: sidePadding,
                       child: ListView.builder(
-                          physics: BouncingScrollPhysics(),
+                          physics: const BouncingScrollPhysics(),
                           itemCount: HOUSE_DATA.length,
                           itemBuilder: (context, index) {
                             return RealEstateItem(

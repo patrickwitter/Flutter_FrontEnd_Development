@@ -16,7 +16,7 @@ class DetailNavBar extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: BorderIcon(
+          child: const BorderIcon(
             height: 50,
             width: 50,
             child: Icon(
@@ -25,7 +25,7 @@ class DetailNavBar extends StatelessWidget {
             ),
           ),
         ),
-        BorderIcon(
+        const BorderIcon(
           height: 50,
           width: 50,
           child: Icon(

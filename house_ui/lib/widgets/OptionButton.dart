@@ -13,7 +13,7 @@ class OptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       // ignore: deprecated_member_use
       child: FlatButton(
@@ -32,7 +32,7 @@ class OptionButton extends StatelessWidget {
               ),
               Text(
                 text,
-                style: TextStyle(color: COLOR_WHITE),
+                style: const TextStyle(color: COLOR_WHITE),
               )
             ],
           )),
