@@ -6,7 +6,7 @@ class CreditCard extends StatelessWidget {
   final CreditCardModel card;
   @override
   Widget build(BuildContext context) {
-    final _media = MediaQuery.of(context).size;
+    final media = MediaQuery.of(context).size;
     return Material(
       elevation: 1,
       shadowColor: Colors.grey.shade300,
@@ -17,12 +17,12 @@ class CreditCard extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           Container(
-            width: _media.width - 40,
-            padding: EdgeInsets.only(left: 30, right: 30, top: 30),
+            width: media.width - 40,
+            padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
+              children: [
+                const Text(
                   "Card no.",
                   style: TextStyle(
                     color: Colors.grey,
@@ -30,7 +30,7 @@ class CreditCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text(
@@ -40,7 +40,7 @@ class CreditCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -52,7 +52,7 @@ class CreditCard extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Text(card.expiryDate,
@@ -72,7 +72,7 @@ class CreditCard extends StatelessWidget {
               height: 25,
               width: 50,
               color: Colors.pink,
-              padding: EdgeInsets.all(7),
+              padding: const EdgeInsets.all(7),
               child: Image.network(
                 card.logo,
                 width: 50,

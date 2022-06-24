@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:wallet_ui/src/data/data.dart';
 import 'package:wallet_ui/src/pages/overview_page.dart';
@@ -8,17 +10,19 @@ import 'package:wallet_ui/src/widgets/payment_card.dart';
 import 'package:wallet_ui/src/widgets/user_card.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final _media = MediaQuery.of(context).size;
+    final Size media = MediaQuery.of(context).size;
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.zero,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: <Widget>[
           Container(
             color: Colors.grey.shade50,
-            height: _media.height / 2,
+            height: media.height / 2,
             child: Stack(
               children: <Widget>[
                 Column(
@@ -30,7 +34,7 @@ class HomePage extends StatelessWidget {
                           Material(
                             elevation: 4,
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage("assets/images/bg1.jpg"),
                                   fit: BoxFit.cover,
@@ -56,13 +60,13 @@ class HomePage extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: Container(
-                    margin: EdgeInsets.only(
+                    margin: const EdgeInsets.only(
                       left: 20,
                     ),
-                    height: _media.longestSide <= 775
-                        ? _media.height / 4
-                        : _media.height / 4.3,
-                    width: _media.width,
+                    height: media.longestSide <= 775
+                        ? media.height / 4
+                        : media.height / 4.3,
+                    width: media.width,
                     child:
                         NotificationListener<OverscrollIndicatorNotification>(
                       onNotification: (overscroll) {
@@ -70,19 +74,20 @@ class HomePage extends StatelessWidget {
                         return false;
                       },
                       child: ListView.builder(
-                        physics: BouncingScrollPhysics(),
-                        padding: EdgeInsets.only(bottom: 10),
+                        physics: const BouncingScrollPhysics(),
+                        padding: const EdgeInsets.only(bottom: 10),
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
                         itemCount: getCreditCards().length,
                         itemBuilder: (context, index) {
                           return Padding(
-                            padding: EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.only(right: 10),
                             child: GestureDetector(
                               onTap: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => OverviewPage())),
+                                      builder: (context) =>
+                                          const OverviewPage())),
                               child: CreditCard(
                                 card: getCreditCards()[index],
                               ),
@@ -94,7 +99,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: _media.longestSide <= 775
+                  top: media.longestSide <= 775
                       ? screenAwareSize(20, context)
                       : screenAwareSize(35, context),
                   left: 10,
@@ -107,7 +112,7 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.menu,
                               color: Colors.white,
                               size: 28,
@@ -115,7 +120,7 @@ class HomePage extends StatelessWidget {
                             onPressed: () => print("Menu"),
                           ),
                           IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.notifications_none,
                               color: Colors.white,
                               size: 28,
@@ -124,25 +129,25 @@ class HomePage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Text(
                               "Wallet",
                               style: TextStyle(
-                                  fontSize: _media.longestSide <= 775 ? 35 : 40,
+                                  fontSize: media.longestSide <= 775 ? 35 : 40,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: "Varela"),
                             ),
                           ),
                           IconButton(
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add,
                               color: Colors.white,
                               size: 36,
@@ -159,7 +164,7 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             color: Colors.grey.shade50,
-            width: _media.width,
+            width: media.width,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -168,7 +173,7 @@ class HomePage extends StatelessWidget {
                       left: 25.0, right: 10, bottom: 20, top: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: const [
                       Text(
                         "Send Money",
                         style: TextStyle(
@@ -185,27 +190,27 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 25),
+                  margin: const EdgeInsets.only(left: 25),
                   height: screenAwareSize(
-                      _media.longestSide <= 775 ? 110 : 80, context),
+                      media.longestSide <= 775 ? 110 : 80, context),
                   child: NotificationListener<OverscrollIndicatorNotification>(
                     onNotification: (overscroll) {
                       () => overscroll.disallowIndicator();
                       return false;
                     },
                     child: ListView.builder(
-                      physics: BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemCount: getUsersCard().length + 1,
                       itemBuilder: (BuildContext context, int index) {
                         if (index == 0) {
-                          return Padding(
+                          return const Padding(
                               padding: EdgeInsets.only(right: 10),
                               child: AddButton());
                         }
 
                         return Padding(
-                          padding: EdgeInsets.only(right: 20),
+                          padding: const EdgeInsets.only(right: 20),
                           child: UserCardWidget(
                             user: getUsersCard()[index - 1],
                           ),
@@ -219,7 +224,7 @@ class HomePage extends StatelessWidget {
                       left: 25.0, bottom: 15, right: 10, top: 40),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: const [
                       Text(
                         "All",
                         style: TextStyle(
@@ -256,8 +261,8 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
+                const Padding(
+                  padding: EdgeInsets.only(
                     left: 25.0,
                     bottom: 15,
                     top: 15,
@@ -278,11 +283,11 @@ class HomePage extends StatelessWidget {
                         return false;
                       },
                       child: ListView.separated(
-                        physics: ClampingScrollPhysics(),
+                        physics: const ClampingScrollPhysics(),
                         shrinkWrap: true,
                         separatorBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(left: 85.0),
+                          return const Padding(
+                            padding: EdgeInsets.only(left: 85.0),
                             child: Divider(),
                           );
                         },

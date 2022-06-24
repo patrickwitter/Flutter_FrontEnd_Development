@@ -7,10 +7,12 @@ class WaveProgress extends StatefulWidget {
   final Color borderColor, fillColor;
   final double progress;
 
-  WaveProgress(this.size, this.borderColor, this.fillColor, this.progress);
+  const WaveProgress(this.size, this.borderColor, this.fillColor, this.progress,
+      {Key? key})
+      : super(key: key);
 
   @override
-  WaveProgressState createState() => new WaveProgressState();
+  WaveProgressState createState() => WaveProgressState();
 }
 
 class WaveProgressState extends State<WaveProgress>
@@ -22,7 +24,7 @@ class WaveProgressState extends State<WaveProgress>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2500),
+      duration: const Duration(milliseconds: 2500),
     );
 
     controller.repeat();
@@ -39,14 +41,14 @@ class WaveProgressState extends State<WaveProgress>
     return Container(
         width: widget.size,
         height: widget.size,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
             color: widget.fillColor.withOpacity(.1),
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
                   color: widget.fillColor.withOpacity(.2),
                   blurRadius: 10,
-                  offset: Offset(0, 10))
+                  offset: const Offset(0, 10))
             ]),
         child: ClipPath(
             clipper: CircleClipper(),
@@ -64,9 +66,9 @@ class WaveProgressState extends State<WaveProgress>
 }
 
 class WaveProgressPainter extends CustomPainter {
-  Animation<double> _animation;
+  final Animation<double> _animation;
   Color borderColor, fillColor;
-  double _progress;
+  final double _progress;
 
   WaveProgressPainter(
       this._animation, this.borderColor, this.fillColor, this._progress)
@@ -75,7 +77,7 @@ class WaveProgressPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // draw small wave
-    Paint wave2Paint = new Paint()..color = fillColor.withOpacity(0.5);
+    Paint wave2Paint = Paint()..color = fillColor.withOpacity(0.5);
     double p = _progress / 100.0;
     double n = 4.2;
     double amp = 1.0;
@@ -99,7 +101,7 @@ class WaveProgressPainter extends CustomPainter {
     canvas.drawPath(path, wave2Paint);
 
     // draw big wave
-    Paint wave1Paint = new Paint()..color = fillColor;
+    Paint wave1Paint = Paint()..color = fillColor;
     n = 1.7;
     amp = 4.0;
 
@@ -119,7 +121,7 @@ class WaveProgressPainter extends CustomPainter {
     canvas.drawPath(path, wave1Paint);
 
     // draw border
-    Paint borderPaint = new Paint()
+    Paint borderPaint = Paint()
       ..color = borderColor
       ..style = PaintingStyle.stroke;
 
@@ -134,8 +136,8 @@ class CircleClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     return Path()
-      ..addOval(new Rect.fromCircle(
-          center: new Offset(size.width / 2, size.height / 2),
+      ..addOval(Rect.fromCircle(
+          center: Offset(size.width / 2, size.height / 2),
           radius: size.width / 2));
   }
 

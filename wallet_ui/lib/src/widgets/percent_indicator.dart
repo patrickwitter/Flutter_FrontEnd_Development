@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison, prefer_typing_uninitialized_variables, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 enum LinearStrokeCap { butt, round, roundAll }
@@ -88,7 +90,7 @@ class _LinearPercentIndicatorState extends State<LinearPercentIndicator>
   @override
   void initState() {
     if (widget.animation) {
-      _animationController = new AnimationController(
+      _animationController = AnimationController(
           vsync: this,
           duration: Duration(milliseconds: widget.animationDuration));
       _animation =
@@ -170,8 +172,8 @@ class _LinearPercentIndicatorState extends State<LinearPercentIndicator>
 }
 
 class LinearPainter extends CustomPainter {
-  final Paint _paintBackground = new Paint();
-  final Paint _paintLine = new Paint();
+  final Paint _paintBackground = Paint();
+  final Paint _paintLine = Paint();
   final lineWidth;
   final progress;
   final center;
@@ -191,8 +193,8 @@ class LinearPainter extends CustomPainter {
     _paintBackground.strokeWidth = lineWidth;
 
     _paintLine.shader =
-        LinearGradient(colors: [progressColor, Color(0xFFc087ff)]).createShader(
-            Rect.fromCircle(
+        LinearGradient(colors: [progressColor, const Color(0xFFc087ff)])
+            .createShader(Rect.fromCircle(
                 center: Offset(progress * 100 * 2, 100),
                 radius: progress * 100 * 1.5));
 

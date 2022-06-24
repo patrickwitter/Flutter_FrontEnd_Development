@@ -24,13 +24,15 @@ var series = [
 ];
 
 class OverviewPage extends StatelessWidget {
+  const OverviewPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    final _media = MediaQuery.of(context).size;
+    final media = MediaQuery.of(context).size;
     return Scaffold(
       body: ListView(
-        physics: BouncingScrollPhysics(),
-        padding: EdgeInsets.only(
+        physics: const BouncingScrollPhysics(),
+        padding: const EdgeInsets.only(
           left: 20,
           top: 70,
         ),
@@ -39,7 +41,7 @@ class OverviewPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
+              const Text(
                 "Overview",
                 style: TextStyle(
                   fontSize: 35,
@@ -47,9 +49,9 @@ class OverviewPage extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              FlatButton(
+              ElevatedButton(
                 onPressed: () => Navigator.pop(context),
-                child: Text(
+                child: const Text(
                   "Cancel",
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.black87),
@@ -57,10 +59,10 @@ class OverviewPage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
-          Text(
+          const Text(
             "Accounts",
             style: TextStyle(
                 fontSize: 24,
@@ -71,17 +73,18 @@ class OverviewPage extends StatelessWidget {
           ),
           Row(
             children: <Widget>[
-              colorCard("Cash", 35.170, 1, context, Color(0xFF1b5bff)),
-              colorCard("Credit Debt", 4320, -1, context, Color(0xFFff3f5e)),
+              colorCard("Cash", 35.170, 1, context, const Color(0xFF1b5bff)),
+              colorCard(
+                  "Credit Debt", 4320, -1, context, const Color(0xFFff3f5e)),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           RichText(
             text: TextSpan(
               children: [
-                TextSpan(
+                const TextSpan(
                   text: "Spending",
                   style: TextStyle(
                     color: Colors.black,
@@ -103,12 +106,12 @@ class OverviewPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 15,
               right: 20,
             ),
             height:
-                screenAwareSize(_media.longestSide <= 775 ? 180 : 130, context),
+                screenAwareSize(media.longestSide <= 775 ? 180 : 130, context),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(6),
@@ -130,7 +133,7 @@ class OverviewPage extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       donutCard(Colors.indigo, "Home"),
@@ -143,13 +146,13 @@ class OverviewPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           RichText(
             text: TextSpan(
               children: [
-                TextSpan(
+                const TextSpan(
                   text: "Budgets",
                   style: TextStyle(
                     color: Colors.black,
@@ -171,11 +174,11 @@ class OverviewPage extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(
+            margin: const EdgeInsets.only(
               top: 15,
               right: 20,
             ),
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             height: screenAwareSize(45, context),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -189,26 +192,26 @@ class OverviewPage extends StatelessWidget {
               ],
             ),
             child: LinearPercentIndicator(
-              width: _media.width * .75,
+              width: media.width * .75,
               lineHeight: 20.0,
               percent: 0.68,
               backgroundColor: Colors.grey.shade300,
-              progressColor: Color(0xFF1b52ff),
+              progressColor: const Color(0xFF1b52ff),
               animation: true,
               animateFromLastPercent: true,
               alignment: MainAxisAlignment.spaceEvenly,
               animationDuration: 1000,
               linearStrokeCap: LinearStrokeCap.roundAll,
-              center: Text(
+              center: const Text(
                 "68.0%",
                 style: TextStyle(color: Colors.white),
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
-          Text(
+          const Text(
             "Cash flow",
             style: TextStyle(
               fontSize: 24,
@@ -223,7 +226,7 @@ class OverviewPage extends StatelessWidget {
             200,
             1,
             Colors.grey.shade100,
-            Color(0xFF716cff),
+            const Color(0xFF716cff),
           ),
           vaweCard(
             context,
@@ -231,7 +234,7 @@ class OverviewPage extends StatelessWidget {
             3210,
             -1,
             Colors.grey.shade100,
-            Color(0xFFff596b),
+            const Color(0xFFff596b),
           ),
         ],
       ),
@@ -241,11 +244,11 @@ class OverviewPage extends StatelessWidget {
   Widget vaweCard(BuildContext context, String name, double amount, int type,
       Color fillColor, Color bgColor) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         top: 15,
         right: 20,
       ),
-      padding: EdgeInsets.only(left: 15),
+      padding: const EdgeInsets.only(left: 15),
       height: screenAwareSize(80, context),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -271,14 +274,14 @@ class OverviewPage extends StatelessWidget {
                 bgColor,
                 67,
               ),
-              Text(
+              const Text(
                 "80%",
                 style:
                     TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
           Column(
@@ -287,15 +290,15 @@ class OverviewPage extends StatelessWidget {
             children: <Widget>[
               Text(
                 name,
-                style:
-                    TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    color: Colors.grey, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
               Text(
                 "${type > 0 ? "" : "-"} \$ ${amount.toString()}",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -313,7 +316,7 @@ class OverviewPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(
+          margin: const EdgeInsets.only(
             left: 0,
             top: 18,
             right: 10,
@@ -327,7 +330,7 @@ class OverviewPage extends StatelessWidget {
         ),
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.grey,
             fontWeight: FontWeight.bold,
             fontSize: 14,
@@ -342,12 +345,12 @@ class OverviewPage extends StatelessWidget {
 
   Widget colorCard(
       String text, double amount, int type, BuildContext context, Color color) {
-    final _media = MediaQuery.of(context).size;
+    final media = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(top: 15, right: 15),
-      padding: EdgeInsets.all(15),
+      margin: const EdgeInsets.only(top: 15, right: 15),
+      padding: const EdgeInsets.all(15),
       height: screenAwareSize(90, context),
-      width: _media.width / 2 - 25,
+      width: media.width / 2 - 25,
       decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(15),
@@ -356,7 +359,7 @@ class OverviewPage extends StatelessWidget {
                 color: color.withOpacity(0.4),
                 blurRadius: 16,
                 spreadRadius: 0.2,
-                offset: Offset(0, 8)),
+                offset: const Offset(0, 8)),
           ]),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -364,7 +367,7 @@ class OverviewPage extends StatelessWidget {
         children: <Widget>[
           Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               color: Colors.white,
               fontWeight: FontWeight.w500,
@@ -372,7 +375,7 @@ class OverviewPage extends StatelessWidget {
           ),
           Text(
             "${type > 0 ? "" : "-"} \$ ${amount.toString()}",
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 22,
               color: Colors.white,
               fontWeight: FontWeight.bold,
