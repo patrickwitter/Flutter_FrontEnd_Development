@@ -41,21 +41,21 @@ https://user-images.githubusercontent.com/53438425/127722978-5fda6be8-8815-4e70-
 https://user-images.githubusercontent.com/53438425/128571877-949a54c5-512c-49a4-a958-b10a2b36b648.mp4
 
   </li>
-  
-  <li> <b> Travel App UI</b> <br/>
-     UI screen credit:https://dribbble.com/shots/4991
-
-https://user-images.githubusercontent.com/53438425/148431174-b407dd85-76ac-4aaf-bc30-620bf1f13f01.mp4
-
-<br/> 
-</li>
-<li> <b>Wallet UI </b> <br/>
+  <li> <b>Wallet UI </b> <br/>
 
     
 
 
 https://user-images.githubusercontent.com/53438425/175577652-170526f1-f400-4f83-be55-bf3d1f789eb9.mp4
 
+</li>
+
+  <li> <b> Travel App UI</b> <br/>
+     UI screen credit:https://dribbble.com/shots/4991
+
+https://user-images.githubusercontent.com/53438425/148431174-b407dd85-76ac-4aaf-bc30-620bf1f13f01.mp4
+
+<br/> 
 </li>
 
 
