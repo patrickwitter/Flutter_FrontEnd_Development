@@ -1,5 +1,5 @@
 # Flutter_FrontEnd_Development
-This is a collection of UI designs that I have implemented using Flutter
+This is a collection of UI designs that I have implemented using Flutter 
   <ul> 
   <li> <b>FoodTruck UI</b> <br/>
   UI screen credit: https://dribbble.com/shots/5358373-Profile-Screen-of-Food-Truck-App<br/>
